@@ -73,7 +73,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-!(Images/'Docker ps'.png)
+![](Images/'Docker%20ps'.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -94,7 +94,7 @@ SSH into the control node and follow the steps below:
 - Update the playbook file to the web servers and ELK VM as they are listed in the virtual network.
 - Run the playbook, and navigate to either the web servers or the ELK virtual machine to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+ Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it? File is located at /etc/ansible.install-elk.yml. Copy the file to ansible container at /etc/ansible/
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? To update Ansible to run the playbook on a specific machine(s), open the *.yml file and edit the "hosts:" to the desired machine(s). To install ELK on the ELK-VM specify the "elk" host, and to install filebeat on the Web servers update hosts to "webservers"
 - _Which URL do you navigate to in order to check that the ELK server is running? Navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana
