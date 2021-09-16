@@ -1,0 +1,34 @@
+---
+- name: My second playbook
+  hosts: webservers
+  become: true
+  tasks:
+
+  - name: install docker.io (state=present is optional)
+    apt:
+      update_cache: yes
+      name: docker.io
+      state: present
+
+  - name: apache2 remove
+    apt:
+      name: apache2
+      state: absent
+
+  - name: install python3-pip (state=present is optional)
+    apt:
+      name: python3-pip
+      state: present
+
+  - name: install docker python package
+    pip:
+      name: docker
+      state: present
+
+  - name: install cyberxsecurity/dvwa container
+    docker_container:
+      name: dvwa
+      image: cyberxsecurity/dvwa
+      state: started
+      restart_policy: always
+      published_ports: 80:80
